@@ -3,11 +3,16 @@
         <title>Home</title>
         <script src="Home_js.js" defer></script>
         <link rel="stylesheet" href="Home.css">
+        
+        <!--Image Slider-->
+        <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
     </head>
     <body>
+
         <!-- Header -->
         <header id="headerSection">
-            <h1 id="pageTitle">Anime Database</h1>
+            <h1 id="pageTitle">Anime Database - Home</h1>
+            <h3>Find Facts About Your Favorite Anime!</h3>
         </header>
 
         <!-- Navigation bar -->
@@ -22,15 +27,22 @@
 
         <!-- Main content -->
         <div class="mainContainer">
+
+            <!--JS Library: Picture Slider-->
+            <div class="animeImages" data-simple-slider>
+                <!--We could write images to our database and use that instead to help meet backend requirements-->
+                <!--Jikan has anime images that I wanted to use but the link is broken so I'm inserting these as a placeholder for now-->
+                <img id="image1" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/Attack-on-Titan-Final-Season-Poster-Header.jpg"/>
+                <img id="image2" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/08/Jujutsu-Kaisen.jpg"/>
+            </div>
+            <script>simpleslider.getSlider()</script>
+            <br>
+
+            <!--Search-->
             <form class="example" action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-
-            <!--JS Library: Picture Slider-->
-            <div class="animeImages">
-                <!--Going to add a picture slider showing all included animes -Tiara-->
-            </div>
         </div>
 
     </body>
