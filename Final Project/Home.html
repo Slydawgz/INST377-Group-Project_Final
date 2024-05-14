@@ -38,12 +38,22 @@
             <script>simpleslider.getSlider()</script>
             <br>
 
-            <!--Search-->
-            <form class="example" action="/action_page.php">
+            <div class="animeContainer">
+                <h2>Top 5 Airing Anime</h2>
+                <div class="animeImages"></div>
+                <button onclick="showAllAiringAnime()">View All</button>
+            </div>
+
+            <!-- Search Form -->
+            <form class="example" onsubmit="loadAnime()">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
 
+        <!-- Footer -->
+        <footer id="footerSection">
+            <p>© 2024 Anime Database. All rights reserved. </p>
+        </footer>
     </body>
 </html>
