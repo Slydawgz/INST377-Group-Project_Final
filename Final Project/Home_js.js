@@ -9,51 +9,84 @@ function loadAnimeData() {
 
 
 // Function to fetch and display top 5 airing anime
+//NOTE: This now retreives the top 5, but it's duplicated multiple times. Need to fix.
 function displayTop5AiringAnime() {
     fetch(`https://api.jikan.moe/v4/anime?airing=true`)
-        .then((res) => res.json())
-        .then(data => {
-            console.log(data)
-            const animeImagesContainer = document.querySelector('.animeImages');
-            animeImagesContainer.innerHTML = '';
+    .then((res) => res.json())
+    .then(data => {
 
-            for (let i = 0; i < 5; i++) {
-                const anime = data[i];
+        myArr = []
+        allAnimeImages.innerHTML = '';
+        Object.values(data.data).forEach(anime => {
+            
 
-                const image = document.createElement('img');
-                image.src = anime.images.jpg.image_url;
-                //image.alt = anime.titles[0].title;
-                animeImagesContainer.appendChild(image);
+            imageTitle = anime.title;
+            imageUrl = anime.images.jpg.image_url;
+            animeRank = anime.rank;
+            
+            const img = new Image();
+            img.src = imageUrl;
+            allAnimeImages.append(img);
+            allAnimeImages.append(imageTitle);
 
-                const title = document.createElement('p');
-                title.textContent = anime.titles[0].title;
-                animeImagesContainer.appendChild(title);
+            const arrItem = {
+                title: imageTitle,
+                link: imageUrl,
+                rank: animeRank
             }
-        })
-        .catch(error => console.log(error));
+            myArr.push(arrItem);
+    
+        myArr.sort((a,b) => a.rank - b.rank);
+        topFive = myArr.slice(0,5);
+
+        fiveAnimeImages.innerHTML = '';
+        Object.values(topFive).forEach(anime => {
+            console.log(anime);
+                imageTitle = anime.title;
+                imageUrl = anime.link;
+                
+                const img = new Image();
+                img.src = imageUrl;
+                allAnimeImages.append(img);
+                allAnimeImages.append(imageTitle);
+                
+                //console.log(img)
+        })  
+        });
+    })
+    .catch(error => console.log(error));
 }
 
+
 // Function to fetch and display all airing anime
+//NOTE: This now works, just need to do CSS or put this on the image slider 
 function showAllAiringAnime() {
     fetch(`https://api.jikan.moe/v4/anime?airing=true`)
         .then((res) => res.json())
         .then(data => {
-            const animeImagesContainer = document.querySelector('.animeImages');
-            animeImagesContainer.innerHTML = '';
 
-            data.forEach(anime => {
-                const image = document.createElement('img');
-                image.src = anime.images.jpg.image_url;
-                image.alt = anime.titles[0].title;
-                animeImagesContainer.appendChild(image);
+            showAllText.innerHTML = 'All Airing Anime';
 
-                const title = document.createElement('p');
-                title.textContent = anime.titles[0].title;
-                animeImagesContainer.appendChild(title);
+            allAnimeImages.innerHTML = '';
+            Object.values(data.data).forEach(anime => {
+                
+
+                console.log(anime);
+                imageTitle = anime.title;
+                imageUrl = anime.images.jpg.image_url;
+                
+                const img = new Image();
+                img.src = imageUrl;
+                allAnimeImages.append(img);
+                allAnimeImages.append(imageTitle);
+                
+                
+                console.log(img)
+                
             });
         })
         .catch(error => console.log(error));
 }
 
-window.onload = displayTop5AiringAnime;
+//window.onload = displayTop5AiringAnime
 
