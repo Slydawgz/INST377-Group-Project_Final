@@ -1,0 +1,19 @@
+# Installation
+How to install application and dependencies details
+# Running on server
+How to run the application on a server
+# Tests to run
+How to run different tests
+# API
+## GET
+Description...
+## POST
+Description...
+## PATCH
+Description...
+## ENDPOINTS
+Description...
+# Known Bugs
+Description...
+# Future Road Map
+Description...
