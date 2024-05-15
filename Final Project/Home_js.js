@@ -9,7 +9,7 @@ function loadAnimeData() {
 
 
 // Function to fetch and display top 5 airing anime
-//NOTE: This now retreives the top 5, but it's duplicated multiple times. Need to fix.
+//NOTE: This now retreives the top 5 (if you uncomment window.onload, but it's duplicated multiple times. Need to fix.
 function displayTop5AiringAnime() {
     fetch(`https://api.jikan.moe/v4/anime?airing=true`)
     .then((res) => res.json())
@@ -59,7 +59,7 @@ function displayTop5AiringAnime() {
 
 
 // Function to fetch and display all airing anime
-//NOTE: This now works, just need to do CSS or put this on the image slider 
+//NOTE: This now works, just need to do CSS and/or put this on the image slider 
 function showAllAiringAnime() {
     fetch(`https://api.jikan.moe/v4/anime?airing=true`)
         .then((res) => res.json())
@@ -88,5 +88,5 @@ function showAllAiringAnime() {
         .catch(error => console.log(error));
 }
 
-//window.onload = displayTop5AiringAnime
+//window.onload = displayTop5AiringAnime, loadAnimeData;
 
