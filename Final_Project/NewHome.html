@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Home</title>
+        <script src="Home_js.js" defer></script>
+        <link rel="stylesheet" href="Home.css">
+        
+        <!--Image Slider-->
+        <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="headerSection">
+            <h1 id="pageTitle">Anime Database - Home</h1>
+            <h3>Find Facts About Your Favorite Anime!</h3>
+        </header>
+
+        <!-- Navigation bar -->
+        <nav id="mainNav">
+            <ul>                   
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Help.html">Help</a></li>
+                <li><a href="Contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div class="mainContainer">
+
+            <!--JS Library: Picture Slider-->
+            <div class="animeImages" data-simple-slider>
+                <!--NOTE: Placeholder for now-->
+                <img id="image1" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/Attack-on-Titan-Final-Season-Poster-Header.jpg"/>
+                <img id="image2" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/08/Jujutsu-Kaisen.jpg"/>
+            </div>
+            <script>simpleslider.getSlider()</script>
+            <br>
+
+            <div class="animeContainer">
+                <!--Show Top 5 Airing-->
+                <h2>Top 5 Airing Anime</h2>
+                <div class="fiveanimeImages" id="fiveAnimeImages"></div>
+                <!--Show All Airing-->
+                <h2 id="showAllText"></h2>
+                <div class="allAnimeImages" id="allAnimeImages"></div>
+                <button onclick="showAllAiringAnime()">View All Airing</button>
+            </div>
+
+            <!-- Search Form -->
+            <form class="example" onsubmit="loadAnime()">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footerSection">
+            <p>© 2024 Anime Database. All rights reserved. </p>
+        </footer>
+    </body>
+</html>
