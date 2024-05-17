@@ -1,0 +1,100 @@
+{% extends "Master.html" %}
+
+{% block title %}Anime Viewing{% endblock %}
+
+{% block section_title %}Anime List{% endblock %}
+
+{% block content %}
+    <div class="animeImages" data-simple-slider>
+        <img id="image1" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/Attack-on-Titan-Final-Season-Poster-Header.jpg"/>
+        <img id="image1" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/08/Jujutsu-Kaisen.jpg"/>
+    </div>
+
+    <h2 style="text-align: center;">Top 5 Anime</h2>
+    <div class="flex-container">
+        {% for anime in top_5_anime %}
+            <div class="anime-item">
+                <h3>{{ anime.title }}</h3>
+                <img src="{{ anime.image_url }}" alt="{{ anime.title }}">
+                <div class="star-rating">
+                    {% for i in "12345" %}
+                        {% if anime.score %}
+                            {% if i|add:"0" <= anime.score %}
+                                <span class="star">&#9733;</span>
+                            {% else %}
+                                <span class="star">&#9734;</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="star">&#9734;</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <p>Score: {{ anime.score | default:"0" }}</p>
+                <a href="{% url 'anime_detail' anime.id %}">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Search Form -->
+    <h2 style="text-align: center;">Search Anime</h2>
+    <form method="GET" action="{% url 'search_anime' %}">
+        {{form.query.label}}:{{form.query}}<br>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2 style="text-align: center;">All Currently Airing</h2>
+    
+
+    <div class="anime-list">
+        <div class="flex-container">
+            {% for anime in page_obj %}
+                <div class="anime-item">
+                    <h3>{{ anime.title }}</h3>
+                    <img src="{{ anime.image_url }}" alt="{{ anime.title }}">
+                    <div class="star-rating">
+                        {% for i in "12345" %}
+                            {% if anime.score %}
+                                {% if i|add:"0" <= anime.score %}
+                                    <span class="star">&#9733;</span>
+                                {% else %}
+                                    <span class="star">&#9734;</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="star">&#9734;</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p>Score: {{ anime.score | default:"0" }}</p>
+                    <a href="{% url 'anime_detail' anime.id %}">View Details</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}
+
+{% block extrascripts %}
+    <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            simpleslider.getSlider();
+        });
+    </script>
+{% endblock %}

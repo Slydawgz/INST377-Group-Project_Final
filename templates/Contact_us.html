@@ -1,0 +1,24 @@
+{% extends "Master.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+        <!-- Form -->
+        <div class="contactContainer">
+            <h2>Have any Questions? Fill out this form below:</h2>
+
+            <form id="contactForm" onsubmit="return validate_text();">
+                <label for="name"> Name:</label>
+                <input type="text" id="nameInput" class="inputClass" required><br><br>
+        
+                <label for="date">Date:</label>
+                <input type="date" id="dateInput" class="inputClass" required><br><br>
+        
+                <label for="concern">Concern:</label>
+                <br>
+                <textarea id="concernText" name="concernText" rows="7" cols="50" class="inputClass" required></textarea>
+                <br><br>
+                <button type="submit" class="button-86" style="text-align: center;">Submit</button>
+            </form>
+        </div>
+{% endblock %}

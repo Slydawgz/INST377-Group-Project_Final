@@ -1,0 +1,40 @@
+{% extends "Master.html" %}
+
+{% block title %}Search Anime{% endblock %}
+
+{% block section_title %}Search Results{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center;">Search Anime</h2>
+    <form method="GET" action="{% url 'search_anime' %}">
+        {{ form.query.label }}:{{ form.query }}<br>
+        <button type="submit">Search</button>
+    </form>
+    <div class="anime-list">
+        <div class="flex-container">
+        {% for anime in combined_results %}
+            <div class="anime-item">
+                {% if anime.title %}
+                    <h3>{{ anime.title }}</h3>
+                    <img src="{{ anime.images.jpg.image_url }}" alt="{{ anime.title }}">
+                    <div class="star-rating">
+                        {% for i in "12345" %}
+                            {% if anime.new_score %}
+                                {% if i|add:"0" <= anime.new_score %}
+                                    <span class="star">&#9733;</span>
+                                {% else %}
+                                    <span class="star">&#9734;</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="star">&#9734;</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p>Score: {{ anime.new_score | default:"0"}}</p>
+                    <a href="{% url 'anime_detail' anime.mal_id %}">View Details</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

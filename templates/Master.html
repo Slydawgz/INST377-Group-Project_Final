@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% load static %}
+    <!--Statics-->
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/About.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Anime_viewing.css' %}">
+    <!--Image Slider-->
+    <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="headerSection">
+        <h1 id="pageTitle">Anime Database - Home</h1>
+        <h3>Find Facts About Your Favorite Anime!</h3>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav id="mainNav">
+        <ul>                   
+            <li><a href="{% url 'Home'%}">Home</a></li>
+            <li><a href="{% url 'About'%}">About</a></li>
+            <li><a href="{% url 'Help'%}">Help</a></li>
+            <li><a href="{% url 'Contact_us'%}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer id="footerSection">
+        <p>© 2024 Anime Database. All rights reserved. </p>
+    </footer>
+    <!-- Scripts -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            simpleslider.getSlider();
+        });
+    </script>
+</body>
+</html>

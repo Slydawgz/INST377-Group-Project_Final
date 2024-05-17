@@ -1,0 +1,15 @@
+{% extends "Master.html" %}
+
+{% block title %}Anime Viewing{% endblock %}
+
+{% block section_title %}Anime List{% endblock %}
+
+{% block content %}
+    <h1>{{ anime_data.data.title }}</h1>
+    <img src="{{ anime_data.data.images.jpg.large_image_url }}" alt="{{ anime_data.data.title }}">
+    <p>Rating: {{ anime_data.data.rating }}</p>
+    <p>Synopsis: {{ anime_data.data.synopsis }}</p>
+    <p>Producers: {% for producer in anime_data.data.producers %}{{ producer.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p>Studios: {% for studio in anime_data.data.studios %}{{ studio.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p>Genres: {% for genre in anime_data.data.genres %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+{% endblock %}
