@@ -117,3 +117,20 @@ def search_anime_view(request):
         'next_page': next_page,
     }
     return render(request, 'search_form.html', context)
+
+
+def anime_detail(request, anime_id):
+    anime_url = f'https://api.jikan.moe/v4/anime/{anime_id}'
+    anime_res = requests.get(anime_url)
+    anime_data = anime_res.json()
+
+    character_url = f'https://api.jikan.moe/v4/anime/{anime_id}/characters'
+    character_res = requests.get(character_url)
+    character_data = character_res.json()
+
+    context = {
+        'anime_data': anime_data,
+        'character_data': character_data
+    }
+
+    return render(request, 'anime_details.html', context)

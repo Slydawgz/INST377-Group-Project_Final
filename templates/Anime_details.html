@@ -12,4 +12,21 @@
     <p>Producers: {% for producer in anime_data.data.producers %}{{ producer.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p>Studios: {% for studio in anime_data.data.studios %}{{ studio.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p>Genres: {% for genre in anime_data.data.genres %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <br>
+    <hr>
+
+    <h2>Characters</h2>
+    <div id="character-grid">
+        {% for character in character_data.data %}
+            <div class="character" id="character">
+                <img src="{{ character.character.images.jpg.image_url}}" alt="{{ character.character.name }}">
+                <div class="character-details" id="character-details">
+                    <strong>{{ character.character.name }}</strong>
+                    <span>{{ character.role }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
 {% endblock %}
