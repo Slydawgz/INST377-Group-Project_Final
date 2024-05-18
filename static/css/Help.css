@@ -1,0 +1,50 @@
+/* P1 - main content*/
+.helpContent {
+    width: 63%;
+    float: left;
+    margin-top: 3px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+/* P1 - sub sectons in main content*/
+.sub-section {
+    background: #D3D3D3; /*#5681a0*/
+    position: relative;
+    height: 15%;
+    padding: 2%;
+    margin: 30px;
+}
+
+/* P1 - sidebar*/
+aside {
+    float: right;
+    width: 30%;
+    height: 40%;
+    background: #D3D3D3;
+    padding:15px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-right: 10px;
+    color:#0b0b0b ;
+    margin-top: 5px;
+}
+
+.sub-section img {
+    position: absolute;
+    bottom: 10;
+    right: 10;
+}
+
+h3 {
+    color: rgb(154, 43, 195);
+}
+
+#footerSection {
+    padding: 7px;
+    margin-top: 3%;;
+}
+
+.helpContainer {
+    width: 100%;
+    height:70%;
+}
