@@ -5,7 +5,7 @@
 {% block section_title %}Anime List{% endblock %}
 
 {% block content %}
-    <h1>{{ anime_data.data.title }}</h1>
+    <h1 id="headingTitle">{{ anime_data.data.title }}</h1>
     <img src="{{ anime_data.data.images.jpg.large_image_url }}" alt="{{ anime_data.data.title }}">
     <p>Rating: {{ anime_data.data.rating }}</p>
     <p>Synopsis: {{ anime_data.data.synopsis }}</p>

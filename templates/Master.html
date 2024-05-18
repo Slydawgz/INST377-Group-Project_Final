@@ -33,6 +33,65 @@
 
     <main>
         {% block content %}{% endblock %}
+
+        <!--Annyang Box-->
+        <div class="audio-navigation">
+            <h2>Enable your Mic to use our Audio Navigation feature!</h2>
+            <ul>
+                <li>Load a Different Page</li>
+                    <ul>
+                        <li>Say: <strong>Navigate to [page]</strong></li>
+                    </ul>
+            </ul>
+
+            <button onclick="startAnnyang()">Turn On Listening</button>
+            <button onclick="stopAnnyang()">Turn Off Listening</button>
+        </div>
+
+        <!--Annyang Library-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script>
+            if(annyang) {
+                //Commands
+                var commands = {
+                    'Navigate to *page': changePage,
+                    'Search *anime': searchAnime
+                }
+
+                //Define functions
+                 function changePage(page) {
+                    if(page == 'home') {
+                        window.location.href = "{% url 'Home'%}"
+                    } else if (page == 'about') {
+                        window.location.href = "{% url 'About'%}"
+                    } else if (page == 'help') {
+                        window.location.href = "{% url 'Help'%}"
+                    } else if (page == 'contact us') {
+                        window.location.href = "{% url 'Contact_us'%}"
+                    }
+
+                }
+                 
+                //Still fixing
+                function searchAnime(anime) {
+                    console.log(anime);
+                }
+
+                //Add command
+                annyang.addCommands(commands);
+
+                //Start listening
+                function startAnnyang() {
+                    annyang.start();
+                }
+
+                //Stop listening
+                function stopAnnyang() {
+                    annyang.abort();
+                }
+
+            }
+        </script>
     </main>
 
     <!-- Footer -->

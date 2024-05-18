@@ -6,7 +6,7 @@
 
 {% block content %}
     <h2 style="text-align: center;">Search Anime</h2>
-    <form method="GET" action="{% url 'search_anime' %}">
+    <form id="animeForm" method="GET" action="{% url 'search_anime' %}">
         {{ form.query.label }}:{{ form.query }}<br>
         <button type="submit">Search</button>
     </form>
