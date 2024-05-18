@@ -1,3 +1,7 @@
+* {
+    font-family: 'Poppins', monospace; 
+}
+
 #mainNav {
     background-color: rgb(255, 255, 255);
     text-align: right;
