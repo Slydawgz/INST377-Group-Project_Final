@@ -50,3 +50,7 @@
     border: 2px solid black;
     border-radius: 25px;
 }
+
+#headingColor {
+    color: rgb(154, 43, 195);
+}
