@@ -3,4 +3,55 @@
 {% block title %}Help{% endblock %}
 
 {% block content %}
+        <!-- Main Container -->
+        <div class="helpContainer">
+            <!-- Main Content Area -->
+            <div class="helpContent" id="helpContent">
+                <div class="sub-section">
+                    <h3>Welcome to the Anime Database Help Center</h3>
+                    <p>
+                        We're thrilled to have you here! Whether you're a seasoned anime 
+                        fan or new to the world of anime, our mission is to make your 
+                        experience as enjoyable and seamless as possible. This help 
+                        page is designed to guide you through the functionalities 
+                        of our website and ensure you get the most out of our database.
+                    </p>
+                </div>
+                <div class="sub-section">
+                    <h3>How to Use Our Database</h3>
+                    <h4>1. Browsing Top and Current Airing Animes</h4>
+                    <ul>
+                        <li><b>Top 5 Airing Animes</b>: On our homepage, you will find a section dedicated to the top 5 currently airing animes. This is a great place to discover the hottest shows that are currently trending.</li>
+                        <li><b>All Airing Animes</b>: We also feature a comprehensive list of all airing animes. Browse through this list to find new series to watch and enjoy.</li>
+                    </ul>
+
+                    <h4>2. Searching for Your Favorite Anime</h4>
+                    <p><b>Search Bar</b>: At the top of our homepage, you'll find a search bar. Simply type in the name of the anime you're looking for, and our database will provide you with detailed information about it.</p>
+
+                    <h4>3. Viewing Anime Information</h4>
+                    <p><b>Anime Details</b>: Click on any anime from the top 5 list, the current airing section, or the search results to access detailed information. You will be able to view the following details:</p>
+                    <ul>
+                        <li><b>Average Score</b>: See how the anime is rated by the community.</li>
+                        <li><b>Rating</b>: Check the age rating of the anime.</li>
+                        <li><b>Synopsis</b>: Read a brief summary of the anime’s plot.</li>
+                        <li><b>Producers</b>: Learn about the companies that produced the anime.</li>
+                        <li><b>Studios</b>: Find out which studios animated the show.</li>
+                        <li><b>Genres</b>: Discover the genres that the anime falls under.</li>
+                        <li><b>Characters</b>: Learn about all the main characters of that anime.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <h3>Contact Us</h3>
+                <hr>
+                <p>We are here to help! If you encounter any issues or have any questions, please do not hesitate to reach out to us. Your feedback is invaluable, and we strive to improve your experience continuously.</p>
+                <p><b>Contact Information:</b></p>
+                
+                <p><b>Feedback:</b> <a href="{% url 'Contact_us'%}">Contact Us Form</a></p>
+            </aside>
+            <div style="clear: both;"></div>
+        </div>
+
 {% endblock %}

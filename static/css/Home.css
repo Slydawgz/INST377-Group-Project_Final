@@ -1,3 +1,21 @@
+* {
+    font-family: 'Poppins', monospace; 
+}
+
+#headerSection, #footerSection{
+    background-color: #c1c1c1; 
+    text-align: center;
+}
+
+#headerSection {
+    padding: 10px;
+}
+
+#footerSection {
+    padding: 7px;
+    margin-top: 3%;;
+}
+
 #mainNav {
     background-color: rgb(255, 255, 255);
     text-align: right;
