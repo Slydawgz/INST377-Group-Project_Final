@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "ISNT377_final/wsgi.py"
+            "dest": "manage.py"
         }
     ]
 }
