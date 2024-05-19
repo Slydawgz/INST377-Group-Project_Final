@@ -2,9 +2,8 @@
     "version": 2,
     "builds": [
         {
-            "src": "ISNT377_final/wsgi.py",
-            "use": "@vercel/python",
-            "config": { "maxLambdaSize": "15mb" }
+            "src": "ISNT377_final",
+            "use": "@vercel/python"
           }
     ],
     "routes": [
