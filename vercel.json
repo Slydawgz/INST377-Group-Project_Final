@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "ISNT377_final",
+            "src": "anime",
             "use": "@vercel/python"
           }
     ],

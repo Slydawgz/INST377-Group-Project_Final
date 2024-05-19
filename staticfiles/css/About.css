@@ -1,0 +1,60 @@
+* {
+    font-family: 'Poppins', monospace; 
+}
+
+#mainNav {
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    color: rgb(0, 0, 0);
+}
+
+#mainNav li {
+    display: inline-block;
+    position: relative;
+}
+
+#mainNav li:hover {
+    background-color: rgb(201, 212, 255);
+    color: rgb(0, 0, 0);
+}
+
+.contentArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.introduction {
+    background-color: rgb(210, 210, 210);
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    
+}
+
+.solution {
+    background-color: rgb(210, 210, 210);
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.encourage {
+    background-color: rgb(210, 210, 210);
+    color:rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+#headingColor {
+    color: rgb(154, 43, 195);
+}

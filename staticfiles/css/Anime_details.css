@@ -1,0 +1,30 @@
+* {
+    font-family: 'Poppins', monospace; 
+}
+
+.characters {
+    margin: 0px;
+}
+
+.characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.character {
+    display: flex;
+    flex: 1 1 45%;
+    align-items: center;
+    margin: 25px;
+}
+
+.character img {
+    width: 200px;
+    height: 250px;
+    margin-right: 10px;
+}
+
+.character-details {
+    display: flex;
+    flex-direction: column;
+} 

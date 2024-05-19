@@ -1,0 +1,44 @@
+* {
+    font-family: 'Poppins', monospace; 
+}
+
+#headerSection, #footerSection{
+    background-color: #c1c1c1; 
+    text-align: center;
+}
+
+#headerSection {
+    padding: 10px;
+}
+
+#footerSection {
+    padding: 7px;
+    margin-top: 3%;;
+}
+
+#mainNav {
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    color: rgb(0, 0, 0);
+}
+
+#mainNav li {
+    display: inline-block;
+    position: relative;
+}
+
+#mainNav li:hover {
+    background-color: rgb(201, 212, 255);
+    color: rgb(0, 0, 0);
+}
+
+.animeImages {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    padding-bottom: 25%;
+}
+
+.example {
+    width: 100%;
+}
