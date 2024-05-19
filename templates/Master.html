@@ -34,20 +34,22 @@
     <main>
         {% block content %}{% endblock %}
 
-        <!--Annyang Box-->
-        <div class="audio-navigation">
-            <br>
-            <h2>Enable your Mic to use our Audio Navigation feature!</h2>
-            <ul>
-                <li>Load a Different Page</li>
-                    <ul>
-                        <li>Say: <strong>Navigate to [page]</strong></li>
-                    </ul>
-            </ul>
+            <!--Annyang Box-->
+            <div class="audio-navigation">
+                <br>
+                <h2>Enable your Mic to use our Audio Navigation feature!</h2>
+                <ul>
+                    <li>Load a Different Page</li>
+                        <ul>
+                            <li>Say: <strong>Navigate to [page]</strong></li>
+                            <li>Say: <strong>Search [anime]</strong> & then click the search button</li>
+                        </ul>
+                </ul>
 
-            <button onclick="startAnnyang()">Turn On Listening</button>
-            <button onclick="stopAnnyang()">Turn Off Listening</button>
-        </div>
+                <button onclick="startAnnyang()">Turn On Listening</button>
+                <button onclick="stopAnnyang()">Turn Off Listening</button>
+            </div>
+        
 
         <!--Annyang Library-->
         <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
@@ -73,9 +75,14 @@
 
                 }
                  
-                //Still fixing
+                //function to look up the name of the anime
                 function searchAnime(anime) {
-                    console.log(anime);
+                    var searchBox = document.getElementById('id_query');
+                    if (searchBox) {
+                        searchBox.value = anime;
+                    } else {
+                        console.error('Search box element not found.');
+                    }
                 }
 
                 //Add command
